@@ -47,15 +47,16 @@ For Software:
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+# Screenshots
+<img width="939" height="924" alt="uselesss kadi" src="https://github.com/user-attachments/assets/0c11090a-dfad-468d-86a7-9474260c6305" />
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+banana ripeness detector
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+<img width="939" height="924" alt="useless tholi" src="https://github.com/user-attachments/assets/8d314344-745f-4eb2-ab4d-34eda14a04bc" />
+biscuit dipping timer
+
+<img width="939" height="924" alt="history" src="https://github.com/user-attachments/assets/d9c6ee25-94f5-468f-91e4-cbaf32581c47" />
+history tab with every past peel and dip recorded
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
