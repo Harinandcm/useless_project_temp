@@ -6,13 +6,12 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: CIRCUIT BREAKERS 
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: DEVADATHAN M PILLAI - collage of engineering karunagappalli 
+- Member 2: HARINAND CM - college of engineering karunagappalli
 
 ### Project Description
 Useless Food Inc. is a dual-mode web utility designed to solve problems nobody asked to solve. It features:
@@ -29,7 +28,7 @@ Useless Food Inc. is a dual-mode web utility designed to solve problems nobody a
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
+- [Languages
 - [Frameworks used]
 - [Libraries used]
 - [Tools used]
