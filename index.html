@@ -1,1 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useless Food Inc.</title>
+    <style>
+        :root {
+            /* Original Warm/Colorful Palette */
+            --bg-color: #f7f5ed;
+            --card-bg: #ffffff;
+            --border-color: #e2decb;
+            --text-main: #1c1a17;
+            --text-muted: #706c61;
+            --accent-yellow: #facc15;
+            --accent-green: #22c55e;
+            --accent-black: #1e293b;
+            --accent-red: #dc2626;
+            --accent-tea: #b45309;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 24px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            max-width: 600px;
+            margin-bottom: 24px;
+            animation: fadeInDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ede8d5;
+            color: var(--text-muted);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .badge:hover {
+            transform: scale(1.08);
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+
+        h1 span {
+            background: var(--accent-yellow);
+            color: var(--text-main);
+            padding: 0 6px;
+            border-radius: 4px;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Navigation Tabs */
+        .nav-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .tab-btn {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .tab-btn.active {
+            background: var(--text-main);
+            color: #ffffff;
+            border-color: var(--text-main);
+            transform: translateY(-1px);
+        }
+
+        /* Layout Containers */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            max-width: 700px;
+            width: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+            border-color: #d1ccba;
+        }
+
+        /* Upload Area */
+        .upload-zone {
+            border: 2px dashed var(--border-color);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            cursor: pointer;
+            text-align: center;
+            min-height: 180px;
+            background: #fcfbf7;
+            transition: all 0.2s ease;
+        }
+
+        .upload-zone:hover {
+            border-color: var(--text-main);
+            background: #f7f4ea;
+        }
+
+        .upload-zone img {
+            max-width: 100%;
+            max-height: 150px;
+            border-radius: 8px;
+            object-fit: contain;
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .btn {
+            background: var(--text-main);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            width: 100%;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background: #f3efe2;
+            color: var(--text-main);
+        }
+
+        /* Typography & Score */
+        .score-display {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+
+        .score-num {
+            font-size: 3.2rem;
+            font-weight: 900;
+            line-height: 1;
+            transition: color 0.4s ease;
+        }
+
+        .score-total {
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .verdict-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .verdict-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin-bottom: 16px;
+            min-height: 48px;
+        }
+
+        /* Animated Elements */
+        .animated-text {
+            animation: textSlide 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #efece1;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-bottom: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--accent-yellow);
+            border-radius: 6px;
+            transition: width 0.8s cubic-bezier(0.65, 0, 0.35, 1), background-color 0.4s ease;
+        }
+
+        .tab-content {
+            display: none;
+            width: 100%;
+        }
+
+        .tab-content.active {
+            display: grid;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .roast-badge {
+            background: #fee2e2 !important;
+            color: #dc2626 !important;
+        }
+
+        /* Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes popIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes textSlide {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="badge">Useless Food Inc.</div>
+        <h1 id="app-title">Is it ripe, or is it <span>lying?</span></h1>
+        <p id="app-subtitle">Upload a photo and let peel science deliver your banana's moment of truth.</p>
+    </header>
+
+    <div class="nav-tabs">
+        <button class="tab-btn active" id="btn-tholi">Tholi 🍌</button>
+        <button class="tab-btn" id="btn-kadi">Kadi ☕</button>
+    </div>
+
+    <!-- THOLI TAB -->
+    <div id="tholi-tab" class="container tab-content active">
+        <div class="card">
+            <div class="upload-zone" id="tholi-upload-zone">
+                <div id="tholi-placeholder">
+                    <p style="font-weight: 700; margin-bottom: 4px;">Drop a banana photo</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">or click to browse</p>
+                </div>
+                <img id="tholi-img-preview" style="display: none;" />
+                <input type="file" id="tholi-input" accept="image/*" style="display: none;">
+            </div>
+            <button class="btn btn-secondary" id="tholi-reset">Analyze another</button>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="badge" id="tholi-badge">Verdict</div>
+                <div class="score-display">
+                    <span class="score-num" id="tholi-score">--</span>
+                    <span class="score-total">/100</span>
+                </div>
+                <div class="verdict-title" id="tholi-verdict">Your verdict will appear here</div>
+                <div class="verdict-desc" id="tholi-desc">Upload a photo to run diagnostics.</div>
+            </div>
+            <div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="tholi-bar"></div>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted);" id="tholi-footer">Waiting for image input...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- KADI TAB -->
+    <div id="kadi-tab" class="container tab-content">
+        <div class="card">
+            <div class="upload-zone" id="kadi-upload-zone">
+                <div id="kadi-placeholder">
+                    <p style="font-weight: 700; margin-bottom: 4px;">Drop a chai-biscuit photo</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted);">or click to browse</p>
+                </div>
+                <img id="kadi-img-preview" style="display: none;" />
+                <input type="file" id="kadi-input" accept="image/*" style="display: none;">
+            </div>
+            <button class="btn btn-secondary" id="kadi-reset">Test another dunk</button>
+        </div>
+
+        <div class="card">
+            <div>
+                <div class="badge" id="kadi-badge">Structural Integrity</div>
+                <div class="score-display">
+                    <span class="score-num" id="kadi-score">--</span>
+                    <span class="score-total">/100</span>
+                </div>
+                <div class="verdict-title" id="kadi-verdict">Your dunk status will appear here</div>
+                <div class="verdict-desc" id="kadi-desc">Upload a photo of your setup to calculate failure risk.</div>
+            </div>
+            <div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="kadi-bar" style="background: var(--accent-tea);"></div>
+                </div>
+                <p style="font-size: 0.75rem; color: var(--text-muted);" id="kadi-footer">Waiting for image input...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
