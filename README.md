@@ -15,7 +15,10 @@
 - Member 3: [Name] - [College]
 
 ### Project Description
-[2-3 lines about what your project does]
+Useless Food Inc. is a dual-mode web utility designed to solve problems nobody asked to solve. It features:
+1. **Tholi 🍌**: Analyzes peel color and image metadata to deliver roasts on whether your banana is prime, an unripe branch, or a hazardous fossil.
+2. **Kadi ☕**: Calculates the exact structural failure point and dunk risk of your favorite biscuits in tea.
+3. **Persistent History**: Keeps a detailed offline log of past food judgements, hazard dodges, and stats.
 
 ### The Problem (that doesn't exist)
 [What ridiculous problem are you solving?]
