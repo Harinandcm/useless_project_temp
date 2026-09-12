@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Useless Food Inc. v3.1",
+  "version": "3.1.0",
+  "description": "Banana ripeness and chai-biscuit structural integrity tester with unhinged roasts.",
+  "action": {
+    "default_popup": "index.html",
+    "default_width": 750,
+    "default_height": 550
+  },
+  "permissions": []
+}
