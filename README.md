@@ -10,15 +10,18 @@
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: [DEVADATHAN M PILLAI] - [College of engineering karunagappalli]
+- Member 2: [HARINAND CM] - [College of engineering karunagappalli]
+
 
 ### Project Description
-[2-3 lines about what your project does]
+[Welcome to useless Project — a collection of completely unnecessary applications designed to solve extremely important problems that humanity somehow survived without.
+
+Our project contains two useless but entertaining applications
+]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[Two problems nobody asked us to solve]
 
 ### The Solution (that nobody asked for)
 [How are you solving it? Keep it fun!]
@@ -47,16 +50,15 @@ For Software:
 ### Project Documentation
 For Software:
 
-# Screenshots
-<img width="939" height="924" alt="uselesss kadi" src="https://github.com/user-attachments/assets/0c11090a-dfad-468d-86a7-9474260c6305" />
-biscuit dipping timer
+# Screenshots (Add at least 3)
+![Screenshot1](Add screenshot 1 here with proper name)
+*Add caption explaining what this shows*
 
+![Screenshot2](Add screenshot 2 here with proper name)
+*Add caption explaining what this shows*
 
-<img width="939" height="924" alt="useless tholi" src="https://github.com/user-attachments/assets/8d314344-745f-4eb2-ab4d-34eda14a04bc" />
-banana ripeness detector
-
-<img width="939" height="924" alt="history" src="https://github.com/user-attachments/assets/d9c6ee25-94f5-468f-91e4-cbaf32581c47" />
-history tab with every past peel and dip recorded
+![Screenshot3](Add screenshot 3 here with proper name)
+*Add caption explaining what this shows*
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
