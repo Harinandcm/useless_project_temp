@@ -2,7 +2,7 @@
 
 
 
-# [Project Name] 🎯
+# USELESS PROJECT  🎯
 
 
 ## Basic Details
